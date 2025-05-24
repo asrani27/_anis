@@ -37,7 +37,7 @@
                             <td>{{$key + 1}}</td>
                             <td>{{$item->jenis}}</td>
                             <td>{{$item->penerima}}</td>
-                            <td>{{$item->tanggal_lahir}}</td>
+                            <td>{{\Carbon\Carbon::parse($item->tanggal_lahir)->format('d M Y')}}</td>
                             <td>{{$item->tempat_lahir}}</td>
                             <td>{{$item->jkel}}</td>
                             <td>{{$item->agama}}</td>

@@ -31,7 +31,7 @@
                         @foreach ($data as $key => $item)
                         <tr style="font-size:14px">
                             <td>{{$key + 1}}</td>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}</td>
                             <td>{{$item->jenis}}</td>
                             <td>{{$item->penerima}}</td>
                             <td>{{$item->verifikator == null ? '': $item->verifikator->nama}}</td>
@@ -45,7 +45,7 @@
                                 <span class="badge badge-danger">{{$item->status}}</span>
                                 @endif
                             </td>
-                            <td>{{$item->tanggal_cair}}</td>
+                            <td>{{\Carbon\Carbon::parse($item->tanggal_cair)->format('d M Y')}}</td>
                             <td class="text-right">
 
                                 <a href="/superadmin/verifikasi/edit/{{$item->id}}" class="btn btn-sm btn-success"><i
